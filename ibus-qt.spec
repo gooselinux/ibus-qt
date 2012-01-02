@@ -1,6 +1,6 @@
 Name:       ibus-qt
 Version:    1.3.0
-Release:    2%{?dist}
+Release:    2%{?dist}.goose.1
 Summary:    Qt IBus library and Qt input method plugin
 License:    GPLv2+
 Group:      System Environment/Libraries
@@ -10,7 +10,7 @@ Patch0:     ibus-qt-HEAD.patch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  cmake
-BuildRequires:  qt-devel >= 4.5
+BuildRequires:  qt4-devel >= 4.5
 BuildRequires:  dbus-devel >= 1.2
 BuildRequires:  libicu-devel >= 4.0
 BuildRequires:  doxygen >= 1.6
@@ -79,6 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/html
 
 %changelog
+* Mon Jan  1 2012 Clint Savage <herlo@gooseproject.org> - 1.3.0-2.goose.1
+- Adjusted BuildRequires to qt4-devel to pull in proper dependencies
+
 * Fri Jul 23 2010 Takao Fujiwara <tfujiwar@redhat.com> - 1.3.0-2
 - Fix Bug 608966 - uncommitted text color is not properly set in kwrite
   Resolves: #608966
